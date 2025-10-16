@@ -21,3 +21,17 @@ bool move_is_possible(size_t move_id, size_t x, size_t y,
 
   return true;
 }
+
+bool move_is_possible_VLA(size_t move_id, size_t x, size_t y, size_t rows,
+                          size_t cols, unsigned int board[rows][cols]) {
+  int nx = (int)x + MOVES_X[move_id];
+  int ny = (int)y + MOVES_Y[move_id];
+
+  // check boundaries
+  if (nx < 0 || ny < 0 || nx >= (int)cols || ny >= (int)rows)
+    return false;
+
+  // check if target cell is unvisited.
+
+  return (board[ny][nx] == 0);
+}
