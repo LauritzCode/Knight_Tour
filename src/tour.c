@@ -113,7 +113,7 @@ unsigned int tour_greedy_vla(size_t rows, size_t cols, size_t start_x,
     bool moved = false;
 
     for (size_t move_id = 0; move_id < MOVE_COUNT; move_id++) {
-      if (move_is_possible(move_id, x, y, board)) {
+      if (move_is_possible_VLA(move_id, x, y, rows, cols, board)) {
         int nx = (int)x + MOVES_X[move_id];
         int ny = (int)y + MOVES_Y[move_id];
 
@@ -150,7 +150,7 @@ unsigned int tour_greedy_silent_vla(size_t rows, size_t cols, size_t start_x,
     bool moved = false;
 
     for (size_t move_id = 0; move_id < MOVE_COUNT; move_id++) {
-      if (move_is_possible(move_id, x, y, board)) {
+      if (move_is_possible_VLA(move_id, x, y, rows, cols, board)) {
         int nx = (int)x + MOVES_X[move_id];
         int ny = (int)y + MOVES_Y[move_id];
 
